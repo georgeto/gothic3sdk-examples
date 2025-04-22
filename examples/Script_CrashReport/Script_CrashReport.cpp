@@ -411,8 +411,8 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD dwReason, LPVOID)
 {
     switch (dwReason)
     {
-    case DLL_PROCESS_ATTACH: ::DisableThreadLibraryCalls(hModule); break;
-    case DLL_PROCESS_DETACH: break;
+        case DLL_PROCESS_ATTACH: ::DisableThreadLibraryCalls(hModule); break;
+        case DLL_PROCESS_DETACH: break;
     }
     return TRUE;
 }

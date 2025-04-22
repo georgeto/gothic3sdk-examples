@@ -18,8 +18,8 @@ void GE_STDCALL UndeadAddon_GetAniName(bCString &p_RetString, eCEntity *p_Entity
 
     switch (NPC->Species)
     {
-    case gESpecies_Skeleton: p_RetString.Replace("Hero", "Skeleton"); break;
-    case gESpecies_Zombie:   p_RetString.Replace("Hero", "Zombie"); break;
+        case gESpecies_Skeleton: p_RetString.Replace("Hero", "Skeleton"); break;
+        case gESpecies_Zombie:   p_RetString.Replace("Hero", "Zombie"); break;
     }
 }
 
@@ -31,8 +31,8 @@ GEBool GE_STDCALL PSAnimation_GetSkeletonName(PSAnimation const &This, bCString 
     {
         switch (NPC->Species.GetValue())
         {
-        case gESpecies_Skeleton: o_SkeletonName = "Skeleton"; return GETrue;
-        case gESpecies_Zombie:   o_SkeletonName = "Zombie"; return GETrue;
+            case gESpecies_Skeleton: o_SkeletonName = "Skeleton"; return GETrue;
+            case gESpecies_Zombie:   o_SkeletonName = "Zombie"; return GETrue;
         }
     }
 
@@ -75,8 +75,8 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD dwReason, LPVOID)
 {
     switch (dwReason)
     {
-    case DLL_PROCESS_ATTACH: ::DisableThreadLibraryCalls(hModule); break;
-    case DLL_PROCESS_DETACH: break;
+        case DLL_PROCESS_ATTACH: ::DisableThreadLibraryCalls(hModule); break;
+        case DLL_PROCESS_DETACH: break;
     }
     return TRUE;
 }

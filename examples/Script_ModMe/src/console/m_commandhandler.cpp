@@ -330,60 +330,62 @@ void eCEditCtrl_OnKeyDown(eCEditCtrl &a_EditCtrl, eCInpShared::eEKeyboardStateOf
     GEBool bKeyPressHandled = GEFalse;
     switch (a_Key)
     {
-    case eCInpShared::eEKeyboardStateOffset_BACKSPACE: {
-        if (!bCtrlPressed || !a_EditCtrl.IsSelEmpty())
-            break;
+        case eCInpShared::eEKeyboardStateOffset_BACKSPACE:
+        {
+            if (!bCtrlPressed || !a_EditCtrl.IsSelEmpty())
+                break;
 
-        if (bShiftPressed)
-        {
-            a_EditCtrl.SetSel(0, a_EditCtrl.GetCursorPos());
-            a_EditCtrl.Clear();
-        }
-        else
-        {
-            GEInt iNextCursorPos = NextCursorPosition(a_EditCtrl, -1);
-            if (iNextCursorPos < a_EditCtrl.GetCursorPos())
+            if (bShiftPressed)
             {
-                a_EditCtrl.SetSel(iNextCursorPos, a_EditCtrl.GetCursorPos());
+                a_EditCtrl.SetSel(0, a_EditCtrl.GetCursorPos());
                 a_EditCtrl.Clear();
             }
-        }
-
-        bKeyPressHandled = GETrue;
-        break;
-    }
-
-    case eCInpShared::eEKeyboardStateOffset_DELETE: {
-        if (!bCtrlPressed || !a_EditCtrl.IsSelEmpty())
-            break;
-
-        if (bShiftPressed)
-        {
-            a_EditCtrl.SetSel(a_EditCtrl.GetCursorPos(), a_EditCtrl.GetText().GetLength());
-            a_EditCtrl.Clear();
-        }
-        else
-        {
-            GEInt iNextCursorPos = NextCursorPosition(a_EditCtrl, 1);
-            if (iNextCursorPos > a_EditCtrl.GetCursorPos())
+            else
             {
-                a_EditCtrl.SetSel(a_EditCtrl.GetCursorPos(), iNextCursorPos);
-                a_EditCtrl.Clear();
+                GEInt iNextCursorPos = NextCursorPosition(a_EditCtrl, -1);
+                if (iNextCursorPos < a_EditCtrl.GetCursorPos())
+                {
+                    a_EditCtrl.SetSel(iNextCursorPos, a_EditCtrl.GetCursorPos());
+                    a_EditCtrl.Clear();
+                }
             }
-        }
 
-        bKeyPressHandled = GETrue;
-        break;
-    }
-
-    case eCInpShared::eEKeyboardStateOffset_A:
-        if (bCtrlPressed)
-        {
-            a_EditCtrl.SetSel(0, a_EditCtrl.GetText().GetLength());
             bKeyPressHandled = GETrue;
+            break;
         }
 
-        break;
+        case eCInpShared::eEKeyboardStateOffset_DELETE:
+        {
+            if (!bCtrlPressed || !a_EditCtrl.IsSelEmpty())
+                break;
+
+            if (bShiftPressed)
+            {
+                a_EditCtrl.SetSel(a_EditCtrl.GetCursorPos(), a_EditCtrl.GetText().GetLength());
+                a_EditCtrl.Clear();
+            }
+            else
+            {
+                GEInt iNextCursorPos = NextCursorPosition(a_EditCtrl, 1);
+                if (iNextCursorPos > a_EditCtrl.GetCursorPos())
+                {
+                    a_EditCtrl.SetSel(a_EditCtrl.GetCursorPos(), iNextCursorPos);
+                    a_EditCtrl.Clear();
+                }
+            }
+
+            bKeyPressHandled = GETrue;
+            break;
+        }
+
+        case eCInpShared::eEKeyboardStateOffset_A:
+            if (bCtrlPressed)
+            {
+                a_EditCtrl.SetSel(0, a_EditCtrl.GetText().GetLength());
+                bKeyPressHandled = GETrue;
+            }
+
+            break;
     }
 
     if (bKeyPressHandled)

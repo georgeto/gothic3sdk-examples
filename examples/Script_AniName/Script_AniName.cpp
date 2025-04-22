@@ -11,8 +11,8 @@ void GE_STDCALL GetAniName_GetActorName(eCEntity const *Actor, bCString &ActorNa
     {
         switch (NPC->GetSpecies().GetValue())
         {
-        case gESpecies_Skeleton: ActorName = "Skeleton"; break;
-        case gESpecies_Zombie:   ActorName = "Zombie"; break;
+            case gESpecies_Skeleton: ActorName = "Skeleton"; break;
+            case gESpecies_Zombie:   ActorName = "Zombie"; break;
         }
     }
 }
@@ -25,8 +25,8 @@ GEBool GE_STDCALL PSAnimation_GetSkeletonName(PSAnimation const &This, bCString 
     {
         switch (NPC->GetSpecies().GetValue())
         {
-        case gESpecies_Skeleton: o_SkeletonName = "Skeleton"; return GETrue;
-        case gESpecies_Zombie:   o_SkeletonName = "Zombie"; return GETrue;
+            case gESpecies_Skeleton: o_SkeletonName = "Skeleton"; return GETrue;
+            case gESpecies_Zombie:   o_SkeletonName = "Zombie"; return GETrue;
         }
     }
 
@@ -38,13 +38,13 @@ gEUseType GE_STDCALL AI_HoldInventoryItems_Effect_Whitelist(PSInteraction const 
     gEUseType UseType = ItemInteraction.UseType;
     switch (UseType)
     {
-    case gEUseType_Bow:
-    case gEUseType_CrossBow:
-    case gEUseType_Staff:
-    case gEUseType_Torch:
-        // Whitelisted
-        return gEUseType_Staff;
-    default: return UseType;
+        case gEUseType_Bow:
+        case gEUseType_CrossBow:
+        case gEUseType_Staff:
+        case gEUseType_Torch:
+            // Whitelisted
+            return gEUseType_Staff;
+        default: return UseType;
     }
 }
 
@@ -56,10 +56,10 @@ gEDamageType GE_STDCALL AI_HoldInventoryItems_Undraw_Effect(PSDamage const &Item
     bCString EffectName;
     switch (Item.Interaction.UseType)
     {
-    case gEUseType_Bow:      EffectName = "eff_ani_fight_undraw_bow_01"; break;
-    case gEUseType_CrossBow: EffectName = "eff_ani_fight_undraw_cross_bow_01"; break;
-    case gEUseType_Staff:    EffectName = "eff_ani_fight_undraw_staff_01"; break;
-    case gEUseType_Torch:    EffectName = "eff_ani_fight_undraw_torch_01"; break;
+        case gEUseType_Bow:      EffectName = "eff_ani_fight_undraw_bow_01"; break;
+        case gEUseType_CrossBow: EffectName = "eff_ani_fight_undraw_cross_bow_01"; break;
+        case gEUseType_Staff:    EffectName = "eff_ani_fight_undraw_staff_01"; break;
+        case gEUseType_Torch:    EffectName = "eff_ani_fight_undraw_torch_01"; break;
     }
 
     if (!EffectName.IsEmpty())
@@ -82,10 +82,10 @@ gEDamageType GE_STDCALL AI_HoldInventoryItems_Draw_Effect(PSDamage const &ItemDa
     bCString EffectName;
     switch (Item.Interaction.UseType)
     {
-    case gEUseType_Bow:      EffectName = "eff_ani_fight_draw_bow_01"; break;
-    case gEUseType_CrossBow: EffectName = "eff_ani_fight_draw_cross_bow_01"; break;
-    case gEUseType_Staff:    EffectName = "eff_ani_fight_draw_staff_01"; break;
-    case gEUseType_Torch:    EffectName = "eff_ani_fight_draw_torch_01"; break;
+        case gEUseType_Bow:      EffectName = "eff_ani_fight_draw_bow_01"; break;
+        case gEUseType_CrossBow: EffectName = "eff_ani_fight_draw_cross_bow_01"; break;
+        case gEUseType_Staff:    EffectName = "eff_ani_fight_draw_staff_01"; break;
+        case gEUseType_Torch:    EffectName = "eff_ani_fight_draw_torch_01"; break;
     }
 
     if (!EffectName.IsEmpty())
@@ -178,8 +178,8 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD dwReason, LPVOID)
 {
     switch (dwReason)
     {
-    case DLL_PROCESS_ATTACH: ::DisableThreadLibraryCalls(hModule); break;
-    case DLL_PROCESS_DETACH: break;
+        case DLL_PROCESS_ATTACH: ::DisableThreadLibraryCalls(hModule); break;
+        case DLL_PROCESS_DETACH: break;
     }
     return TRUE;
 }
