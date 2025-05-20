@@ -356,6 +356,7 @@ void EnableTracing()
     INSTRUMENT_PROPERTY_SETTER(Routine, SetTaskTime, "%f", GEFloat);
     INSTRUMENT_PROPERTY_SETTER(Routine, SetTimeScale, "%f", GEFloat);
     INSTRUMENT_PROPERTY_SETTER(Routine, StartOutput, "%s", bCString);
+    INSTRUMENT_PROPERTY_SETTER(Navigation, SetRoutine, "%s", bCString const &);
 }
 
 extern "C" __declspec(dllexport) gSScriptInit const *GE_STDCALL ScriptInit(void)
