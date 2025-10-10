@@ -18,7 +18,7 @@ CPMAddPackage(
   OPTIONS
     "G3SDK_HEADER_ONLY OFF"
   GITHUB_REPOSITORY georgeto/gothic3sdk
-  GIT_TAG bed942836bb2fa2152be5c24980e0b42039d0967
+  GIT_TAG 4296b8691d3eb5f18200cc528fd622ca4196a38e
 )
 include(${gothic3sdk_SOURCE_DIR}/cmake/Setup.cmake)
 
