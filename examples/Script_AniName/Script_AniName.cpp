@@ -125,8 +125,8 @@ void ApplyHooks()
         .AddThisArg()
         .Hook();
 
-    static mCCallHook Hook_AI_HoldInventoryItems_raw_Effect_Whitelist;
-    Hook_AI_HoldInventoryItems_raw_Effect_Whitelist
+    static mCCallHook Hook_AI_HoldInventoryItems_Draw_Effect_Whitelist;
+    Hook_AI_HoldInventoryItems_Draw_Effect_Whitelist
         .Prepare(RVA_ScriptGame(0x44743), &AI_HoldInventoryItems_Effect_Whitelist)
         .AddThisArg()
         .Hook();
