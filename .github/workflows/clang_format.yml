@@ -13,8 +13,9 @@ jobs:
           fetch-depth: 1
 
       - name: Run clang-format style check
-        uses: jidicula/clang-format-action@4726374d1aa3c6aecf132e5197e498979588ebc8 # v4.15.0
+        uses: georgeto/clang-format-lint-action@bd07217901b18dd1992c72040c499eb7715203a3
         with:
-          clang-format-version: 20
-          check-path: examples
-          exclude-regex: '(Script_DumpProperties/picojson/|Script_RemoteControl/src/proto/|Script_RemoteControl/g3rc.proto)'
+          clangFormatVersion: 20
+          extensions: c,h,cpp,hpp,cc,inl
+          source: examples
+          exclude: 'examples/Script_DumpProperties/picojson/* examples/Script_RemoteControl/src/proto/*'
