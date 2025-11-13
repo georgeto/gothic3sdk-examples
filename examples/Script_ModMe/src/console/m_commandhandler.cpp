@@ -272,7 +272,7 @@ namespace
 GEInt NextCursorPosition(eCEditCtrl &a_EditCtrl, GEInt a_iDirection)
 {
     static const GELPCChar s_WordChars = "abcdefghijklmnopqrstuvxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
-    static const GELPCChar s_SeparatorChars = " ()[]{}-+*/'\\&/=�:;,.|<>@";
+    static const GELPCChar s_SeparatorChars = " ()[]{}-+*/'\\&/=Â´:;,.|<>@";
 
     bCString strText = a_EditCtrl.GetText();
     GEInt iCursorPos = a_EditCtrl.GetCursorPos();

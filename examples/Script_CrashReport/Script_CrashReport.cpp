@@ -137,7 +137,7 @@ void GE_STDCALL CheckSecurityToken(GEU32 &o_Deadbeef)
     if (o_Deadbeef != 0xDEADBEEF)
     {
         bCErrorAdmin &ErrorAdmin = bCErrorAdmin::GetInstance();
-        ErrorAdmin.CallFatalError("eCArchiveFile::Open - warning: can¦t read archivefile '"
+        ErrorAdmin.CallFatalError("eCArchiveFile::Open - warning: can't read archivefile '"
                                       + pArchiveFile->GetFileName()
                                       + "'. Security token test for archivedirectorstructure failed !",
                                   ".\\io\\archivesystem\\ge_archivefile.cpp", 498);

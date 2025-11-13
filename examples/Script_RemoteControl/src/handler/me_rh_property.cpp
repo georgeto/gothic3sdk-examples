@@ -39,7 +39,7 @@ void mCPropertyRequestHandler::HandleRequest()
     bCString strPropertySetName;
     eCEntityPropertySet * pPropertySet =  pEntity->GetPropertySet(strPropertySetName);
     if( !pPropertySet )
-        return FailAndPrintMessage( "Ziel-Entity enth‰lt das PropertySet nicht." );
+        return FailAndPrintMessage( "Ziel-Entity enth√§lt das PropertySet nicht." );
 
     bCAccessorProperty AccessorProperty(pPropertySet);
     while(AccessorProperty.IsValid() || AccessorProperty.GetAccessorPropertyObject().HasBaseClass())
